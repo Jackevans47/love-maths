@@ -1,11 +1,11 @@
 // Wait for the DOM to finish loading before running the game
 // Get the button elements and add event listeners to them
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     let buttons = document.getElementsByTagName("button");
 
     for (let button of buttons) {
-        button.addEventListener("click", function() {
+        button.addEventListener("click", function () {
             if (this.getAttribute("data-type") === "submit") {
                 checkAnswer();
             } else {
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     }
 
-    document.getElementById("answer-box").addEventListener("keydown", function(event) {
+    document.getElementById("answer-box").addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
             checkAnswer();
         }
@@ -41,7 +41,7 @@ function runGame(gameType) {
         displayAdditionQuestion(num1, num2);
     } else if (gameType === "multiply") {
         displayMultiplyQuestion(num1, num2);
-    } else if (gameType === "subtract" ) {
+    } else if (gameType === "subtract") {
         displaySubtractQuestion(num1, num2);
     } else {
         alert(`Unknown game type: ${gameType}`);
@@ -79,16 +79,16 @@ function calculateCorrectAnswer() {
     let operand2 = parseInt(document.getElementById('operand2').innerText);
     let operator = document.getElementById("operator").innerText;
 
-if (operator === "+") {
-    return [operand1 + operand2, "addition"];
-} else if (operator === "x") {
-    return [operand1 * operand2, "multiply"];
-} else if (operator === "-") {
-    return [operand1 - operand2, "subtract"];
-} else {  {
-    alert(`Unimplemented operator ${operator}`);
-    throw `Unimplemented operator ${operator}. Aborting!`;
-}
+    if (operator === "+") {
+        return [operand1 + operand2, "addition"];
+    } else if (operator === "x") {
+        return [operand1 * operand2, "multiply"];
+    } else if (operator === "-") {
+        return [operand1 - operand2, "subtract"];
+    } else {
+        alert(`Unimplemented operator ${operator}`);
+        throw `Unimplemented operator ${operator}. Aborting!`;
+    }
 
 }
 
