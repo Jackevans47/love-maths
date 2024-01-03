@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     })
 
-    runGame("addition")
+    runGame("addition");
 });
 /**
  * The main game "loop", called when the script is first loaded 
@@ -107,8 +107,8 @@ function incrementScore() {
  */
 function incrementWrongAnswer() {
 
-    let oldScore = parseInt(document.getElementById("incorrect").innertext);
-    document.getElementById("incorrect").innertext = ++oldScore;
+    let oldScore = parseInt(document.getElementById("incorrect").innerText);
+    document.getElementById("incorrect").innerText = ++oldScore;
 
 }
 
@@ -122,7 +122,7 @@ function displayAdditionQuestion(operand1, operand2) {
 function displaySubtractQuestion(operand1, operand2) {
 
     document.getElementById("operand1").textContent = operand1 > operand2 ? operand1 : operand2;
-    document.getElementById("operand2").textContent = operand1 > operand2 ? operand1 : operand2;
+    document.getElementById("operand2").textContent = operand1 > operand2 ? operand2 : operand1;
     document.getElementById('operator').textContent = "-";
 }
 
